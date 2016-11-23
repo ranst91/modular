@@ -1,0 +1,20 @@
+.cards {
+  margin: 0 auto;
+  max-width: 80%;
+  display: flex;
+  padding: 0; }
+  .cards__card {
+    padding: 10px;
+    display: inline-flex;
+    border: 1px solid #cccccc;
+    min-width: 150px;
+    border-radius: 25px;
+    height: 200px;
+    background-color: #fffffd;
+    -webkit-box-shadow: -5px 2px 7px -4px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -5px 2px 7px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 2px 7px -4px rgba(0, 0, 0, 0.1); }
+    .cards__card h1 {
+      margin: 5px; }
+  .cards__card + .cards__card {
+    margin-left: -30px; }

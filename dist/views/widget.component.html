@@ -1,0 +1,7 @@
+<div class="weatherCards">
+    <input type="text" class="weatherCards__search--input" ng-model="vm.zipCode" placeholder="Enter zip-code here">
+    <button ng-click="vm.addCard()" class="weatherCards__search--button">Add card</button>
+    <div id="sortable" class="weatherCards__cards cards" ui-sortable="{ 'ui-floating': true }" ng-model="vm.cardsList">
+        <weather-card class="cards__card" ng-repeat="item in vm.cardsList" weather="item"></weather-card>
+    </div>
+</div>
