@@ -1,14 +1,12 @@
-$ = jQuery = require('jquery');
-require('./vendors/jquery-ui.min.js');
-// var Weather = require('./weather');
-var widgetComponent = require('./weatherMain.component');
-var WeatherCard = require('./WeatherCard.component.js');
+var widgetComponent = require('./weatherWidget.component');
+var WeatherCard = require('./weatherCard.component.js');
 var draggable = require('./draggable.directive.js');
-var ApiService = require('./api.service');
+var dataservice = require('./dataservice');
+require('angular-toastr');
 require('./vendors/sortable.min.js');
-var app = angular.module('app.weather', ['ui.sortable'])
-    .component('weatherWidget', widgetComponent)
-    .component('weathercard', WeatherCard)
+var app = angular.module('app.weather', ['ui.sortable', 'toastr'])
     .directive('draggable', draggable)
-    .factory('ApiService', ['$http', ApiService]);
+    .factory('dataservice', ['$http', dataservice])
+    .component('weatherWidget', widgetComponent)
+    .component('weatherCard', WeatherCard);
 module.exports = app;

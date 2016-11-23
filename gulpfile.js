@@ -17,9 +17,8 @@ var config = {
         components: './src/components/**.***.html',
         js: './src/**/*.js',
         css: [
-            'node_modules/bootstrap/dist/css/bootstrap.min.css',
-            'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
-            './src/css/styles.css'
+            'node_modules/angular-toastr/dist/angular-toastr.css',
+            'src/css/styles.css'
         ],
         sass: './src/sass/**.scss',
         dist: './dist',
@@ -89,7 +88,7 @@ gulp.task('lint', function () {
 gulp.task('watch', function () {
     gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.components, ['components_html']);
-    gulp.watch(config.paths.sass, ['sass', 'css']);
+    // gulp.watch(config.paths.sass, ['sass', 'css']);
     gulp.watch(config.paths.js, ['js']);
 });
 
@@ -101,4 +100,4 @@ gulp.task('watch', function () {
  * 4. Set up a local dev server, Open a web browser the get the stuff running
  * 5. Watch for any real time changes
  */
-gulp.task('default', ['html', 'components_html', 'sass', 'css', 'js', 'open', 'watch']);
+gulp.task('default', ['html', 'components_html', 'js', 'open', 'watch']);
